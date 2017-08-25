@@ -5,10 +5,11 @@
     <string name="menu_eggs">Eggs:</string>
     <string name="menu_monsters">Monsters:</string>
 
+    <string name="back">Back</string>
+
     <string name="shop_query">Would you like to buy an egg?</string>
     <string name="shop_confirm">Purchase for 10 coins</string>
     <string name="shop_error">You do not have enough coins</string>
-    <string name="shop_farm">Return to farm</string>
 
     <string name="farm_query">What would you like to do?</string>
     <string name="farm_shop">Visit shop</string>

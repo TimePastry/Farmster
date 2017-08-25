@@ -1,6 +1,5 @@
 package com.bignerdranch.android.farmster;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +28,7 @@ public class ShopActivity extends AppCompatActivity {
         mPlayer = Player.getInstance();
 
         Button purchaseButton = (Button) findViewById(R.id.shop_purchase_button);
-        Button farmButton = (Button) findViewById(R.id.shop_farm_button);
+        Button backButton = (Button) findViewById(R.id.shop_back_button);
         mCoinsView = (TextView) findViewById(R.id.shop_coins_view);
         mEggsView = (TextView) findViewById(R.id.shop_eggs_view);
         updateMenuText();
@@ -48,10 +47,11 @@ public class ShopActivity extends AppCompatActivity {
             }
         });
 
-        farmButton.setOnClickListener(new View.OnClickListener() {
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ShopActivity.this, FarmActivity.class));
+                finish();
+                //startActivity(new Intent(ShopActivity.this, FarmActivity.class));
             }
         });
 
