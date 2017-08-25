@@ -15,5 +15,7 @@ public class FarmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_farm);
 
         mPlayer = Player.getInstance();
+
+        //todo this class
     }
 }

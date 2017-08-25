@@ -1,5 +1,8 @@
 package com.bignerdranch.android.farmster.PlayerModel;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Player {
     private static Player sPlayer;
 
@@ -11,11 +14,13 @@ public class Player {
     }
 
     private int mCoins;
-    private int mEggs;
+    private List<Egg> mEggs;
+    private List<Monster> mMonsters;
 
     private Player(){
         mCoins = 100;
-        mEggs = 0;
+        mEggs = new LinkedList<>();
+        mMonsters = new LinkedList<>();
     }
 
     public int getCoins() {
@@ -26,11 +31,35 @@ public class Player {
         mCoins = coins;
     }
 
-    public int getEggs() {
+    public int getEggCount(){
+        return mEggs.size();
+    }
+
+    public int getMonsterCount(){
+        return mMonsters.size();
+    }
+
+    public void addEgg(Egg egg){
+        mEggs.add(egg);
+    }
+
+    public void addMonster(Monster monster){
+        mMonsters.add(monster);
+    }
+
+    public List<Egg> getEggs() {
         return mEggs;
     }
 
-    public void setEggs(int eggs) {
+    public void setEggs(List<Egg> eggs) {
         mEggs = eggs;
+    }
+
+    public List<Monster> getMonsters() {
+        return mMonsters;
+    }
+
+    public void setMonsters(List<Monster> monsters) {
+        mMonsters = monsters;
     }
 }

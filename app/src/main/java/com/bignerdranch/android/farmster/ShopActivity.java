@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bignerdranch.android.farmster.PlayerModel.Egg;
 import com.bignerdranch.android.farmster.PlayerModel.Player;
 
 public class ShopActivity extends AppCompatActivity {
@@ -37,15 +38,22 @@ public class ShopActivity extends AppCompatActivity {
                 }
 
                 mPlayer.setCoins(mPlayer.getCoins() - EGG_COST);
-                mPlayer.setEggs(mPlayer.getEggs() + 1);
+                mPlayer.addEgg(createEgg());
                 updateCounts();
             }
         });
+
+        //todo set listener to go to farm
+    }
+
+    private Egg createEgg() {
+        //todo make a random egg
+        return null;
     }
 
     private void updateCounts(){
         mCoinsView.setText(getString(R.string.menu_coins) + " " + mPlayer.getCoins());
-        mEggsView.setText(getString(R.string.menu_eggs) + " " + mPlayer.getEggs());
+        mEggsView.setText(getString(R.string.menu_eggs) + " " + mPlayer.getEggCount());
     }
 
 }
