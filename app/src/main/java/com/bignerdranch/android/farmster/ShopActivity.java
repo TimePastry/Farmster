@@ -1,5 +1,6 @@
 package com.bignerdranch.android.farmster;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,9 @@ import android.widget.Toast;
 
 import com.bignerdranch.android.farmster.PlayerModel.Egg;
 import com.bignerdranch.android.farmster.PlayerModel.Player;
+import com.bignerdranch.android.farmster.PlayerModel.Race;
+
+import java.util.Random;
 
 public class ShopActivity extends AppCompatActivity {
 
@@ -24,10 +28,11 @@ public class ShopActivity extends AppCompatActivity {
 
         mPlayer = Player.getInstance();
 
-        Button purchaseButton = (Button) findViewById(R.id.purchase_button);
-        mCoinsView = (TextView) findViewById(R.id.coins_view);
-        mEggsView = (TextView) findViewById(R.id.eggs_view);
-        updateCounts();
+        Button purchaseButton = (Button) findViewById(R.id.shop_purchase_button);
+        Button farmButton = (Button) findViewById(R.id.shop_farm_button);
+        mCoinsView = (TextView) findViewById(R.id.shop_coins_view);
+        mEggsView = (TextView) findViewById(R.id.shop_eggs_view);
+        updateMenuText();
 
         purchaseButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -39,19 +44,28 @@ public class ShopActivity extends AppCompatActivity {
 
                 mPlayer.setCoins(mPlayer.getCoins() - EGG_COST);
                 mPlayer.addEgg(createEgg());
-                updateCounts();
+                updateMenuText();
             }
         });
 
-        //todo set listener to go to farm
+        farmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ShopActivity.this, FarmActivity.class));
+            }
+        });
+
     }
 
     private Egg createEgg() {
-        //todo make a random egg
-        return null;
+        Random random = new Random();
+        int newMight = random.nextInt(5);
+        int newIntelligence = random.nextInt(5);
+        int newBeauty = random.nextInt(5);
+        return new Egg(newMight, newIntelligence, newBeauty, Race.BEAR);
     }
 
-    private void updateCounts(){
+    private void updateMenuText(){
         mCoinsView.setText(getString(R.string.menu_coins) + " " + mPlayer.getCoins());
         mEggsView.setText(getString(R.string.menu_eggs) + " " + mPlayer.getEggCount());
     }

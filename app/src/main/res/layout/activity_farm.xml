@@ -11,21 +11,21 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/coins_view"
+            android:id="@+id/farm_coins_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/menu_coins"
             android:padding="24dp"/>
 
         <TextView
-            android:id="@+id/eggs_view"
+            android:id="@+id/farm_eggs_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/menu_eggs"
             android:padding="24dp"/>
 
         <TextView
-            android:id="@+id/monsters_view"
+            android:id="@+id/farm_monsters_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/menu_monsters"
@@ -48,21 +48,21 @@
         >
 
         <Button
-            android:id="@+id/hatch_button"
+            android:id="@+id/farm_hatch_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/farm_hatch"
             />
 
         <Button
-            android:id="@+id/check_button"
+            android:id="@+id/farm_check_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/farm_check"
             />
 
         <Button
-            android:id="@+id/shop_button"
+            android:id="@+id/farm_shop_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/farm_shop"

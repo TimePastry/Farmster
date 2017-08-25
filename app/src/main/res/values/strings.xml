@@ -14,4 +14,5 @@
     <string name="farm_shop">Visit shop</string>
     <string name="farm_hatch">Hatch an egg</string>
     <string name="farm_check">Check on a monster</string>
+    <string name="farm_hatch_error">You don\'t have any eggs to hatch</string>
 </resources>

@@ -1,5 +1,5 @@
 package com.bignerdranch.android.farmster.PlayerModel;
 
-enum Race {
+public enum Race {
     BEAR
 }

@@ -43,7 +43,7 @@ public class Player {
         mEggs.add(egg);
     }
 
-    public void addMonster(Monster monster){
+    private void addMonster(Monster monster){
         mMonsters.add(monster);
     }
 
@@ -61,5 +61,13 @@ public class Player {
 
     public void setMonsters(List<Monster> monsters) {
         mMonsters = monsters;
+    }
+
+    public void hatchEgg() {
+        if (getEggCount() <= 0){
+            return;
+        }
+        Egg egg = mEggs.remove(0);
+        addMonster(new Monster(egg));
     }
 }
